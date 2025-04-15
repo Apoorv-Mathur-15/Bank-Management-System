@@ -228,6 +228,8 @@ public class SignupPage2 extends JFrame implements ActionListener {
                 statement.setString(9,seniorCitizen);
                 statement.setString(10,existingAccount);
                 statement.execute();
+                new SignupPage3(formNo);
+                setVisible(false);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
