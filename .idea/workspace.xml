@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a4290fb-92da-4e10-84c8-bf0b04d1abd8" name="Changes" comment="14th April 2025">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bank/management/system/SignupPage3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/management/system/SignupPage3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank/management/system/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/management/system/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank/management/system/SignupPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/management/system/SignupPage2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744650395870</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="14th April 2025">
+      <option name="closed" value="true" />
+      <created>1744680940349</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744680940349</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

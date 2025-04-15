@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.util.Objects;
 
 public class SignupPage2 extends JFrame implements ActionListener {
     String formNo;
@@ -191,6 +193,45 @@ public class SignupPage2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String religion = Objects.requireNonNull(comboBox.getSelectedItem()).toString();
+        String category = Objects.requireNonNull(comboBox2.getSelectedItem()).toString();
+        String income = Objects.requireNonNull(comboBox3.getSelectedItem()).toString();
+        String education = Objects.requireNonNull(comboBox4.getSelectedItem()).toString();
+        String occupation = Objects.requireNonNull(comboBox5.getSelectedItem()).toString();
+        String panCard = textPan.getText();
+        String aadhaarNumber = textAadhaar.getText();
+        String seniorCitizen = null;
+        if(seniorYes.isSelected())
+            seniorCitizen="Yes";
+        else if (seniorNo.isSelected())
+            seniorCitizen="No";
+        String existingAccount = null;
+        if(existingYes.isSelected())
+            existingAccount="Yes";
+        else if (existingNo.isSelected())
+            existingAccount="No";
+
+        try {
+            if(textPan.getText().equals("") || textAadhaar.getText().equals(""))
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            else {
+                Conn conn = new Conn();
+                PreparedStatement statement = conn.connection.prepareStatement("INSERT INTO signup2 values (?,?,?,?,?,?,?,?,?,?)");
+                statement.setString(1,formNo);
+                statement.setString(2,religion);
+                statement.setString(3,category);
+                statement.setString(4,income);
+                statement.setString(5,education);
+                statement.setString(6,occupation);
+                statement.setString(7,panCard);
+                statement.setString(8,aadhaarNumber);
+                statement.setString(9,seniorCitizen);
+                statement.setString(10,existingAccount);
+                statement.execute();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
 }

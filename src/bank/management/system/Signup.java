@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import java.util.Random;
 
 public class Signup extends JFrame implements ActionListener {
@@ -222,9 +223,22 @@ public class Signup extends JFrame implements ActionListener {
             if(textName.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Fill all the fields");
             }else {
-                Conn con1 = new Conn();
-                String q = "insert into signup values('"+formNo+"', '"+name+"','"+fathersName+"','"+dob+"','"+gender+"','"+email+"','"+maritial+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
-                con1.statement.executeUpdate(q);
+                Conn conn = new Conn();
+                //String q = "insert into signup values('"+formNo+"', '"+name+"','"+fathersName+"','"+dob+"','"+gender+"','"+email+"','"+maritial+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
+                PreparedStatement statement = conn.connection.prepareStatement("INSERT INTO signup values (?,?,?,?,?,?,?,?,?,?,?)");
+                statement.setString(1,formNo);
+                //con1.statement.executeUpdate(q);
+                statement.setString(2,name);
+                statement.setString(3,fathersName);
+                statement.setString(4,dob);
+                statement.setString(5,gender);
+                statement.setString(6,email);
+                statement.setString(7,maritial);
+                statement.setString(8,add());
+                statement.setString(9,city);
+                statement.setString(10,pincode);
+                statement.setString(11,state);
+                statement.execute();
                 new SignupPage2(first);
                 setVisible(false);
             }
