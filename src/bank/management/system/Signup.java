@@ -234,7 +234,7 @@ public class Signup extends JFrame implements ActionListener {
                 statement.setString(5,gender);
                 statement.setString(6,email);
                 statement.setString(7,maritial);
-                statement.setString(8,add());
+                statement.setString(8,address);
                 statement.setString(9,city);
                 statement.setString(10,pincode);
                 statement.setString(11,state);
