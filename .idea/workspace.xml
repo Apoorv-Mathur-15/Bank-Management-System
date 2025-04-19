@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a4290fb-92da-4e10-84c8-bf0b04d1abd8" name="Changes" comment="15th April 2025">
-      <change beforePath="$PROJECT_DIR$/src/bank/management/system/SignupPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/management/system/SignupPage2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank/management/system/SignupPage3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank/management/system/SignupPage3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +53,7 @@
     &quot;Application.Login.executor&quot;: &quot;Run&quot;,
     &quot;Application.Signup.executor&quot;: &quot;Run&quot;,
     &quot;Application.Signup2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignupPage2.executor&quot;: &quot;Run&quot;,
     &quot;Application.SignupPage3.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -72,7 +74,7 @@
       <recent name="bank.management.system" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignupPage2">
+  <component name="RunManager" selected="Application.SignupPage3">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bank.management.system.Login" />
       <module name="Bank Management System" />
@@ -103,8 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SignupPage2" />
         <item itemvalue="Application.SignupPage3" />
+        <item itemvalue="Application.SignupPage2" />
         <item itemvalue="Application.Signup" />
         <item itemvalue="Application.Login" />
       </list>
@@ -175,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744688282632</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="15th April 2025">
+      <option name="closed" value="true" />
+      <created>1744688574287</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744688574287</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

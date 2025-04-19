@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.util.Random;
 
 public class SignupPage3 extends JFrame implements ActionListener {
 
@@ -183,6 +185,54 @@ public class SignupPage3 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String accountType = null;
+        if(radiioCurrent.isSelected()) accountType="Current Account";
+        else if(radioFixedDeposit.isSelected()) accountType="Fixed Deposit Account";
+        else if(radioSavings.isSelected()) accountType="Savings Account";
+        else if(radioRecurDeposit.isSelected()) accountType="Recurring Deposit Account";
+
+        Random random = new Random();
+        long first7 = (random.nextLong() % 90000000L) + 1409963000000000L;
+        String cardNumber = "" + Math.abs(first7);
+        long first3 = (random.nextLong() % 9000L) + 1000L;
+        String pin = "" + Math.abs(first3);
+        String facility = "";
+        if(checkATM.isSelected()) facility += "ATM CARD ";
+        if(checkInternetBanking.isSelected()) facility += "Internet Banking ";
+        if(checkChequeBook.isSelected()) facility += "Cheque Book ";
+        if(checkEmailAlerts.isSelected()) facility += "Email Alerts ";
+        if(checkEStatement.isSelected()) facility += "E-Statement ";
+        if(checkMobileBanking.isSelected()) facility += "Mobile Banking ";
+
+        try {
+            if(e.getSource() == submit){
+                if(accountType.isEmpty())
+                    JOptionPane.showMessageDialog(null, "Please Fill in all the details");
+                else {
+                    Conn conn = new Conn();
+                    PreparedStatement statement = conn.connection.prepareStatement("Insert Into signup3 values (?,?,?,?,?)");
+                    statement.setString(1, formNo);
+                    statement.setString(2, accountType);
+                    statement.setString(3, cardNumber);
+                    statement.setString(4, pin);
+                    statement.setString(5, facility);
+                    statement.execute();
+                    PreparedStatement statement1 = conn.connection.prepareStatement("Insert into login values (?,?,?)");
+                    statement1.setString(1, formNo);
+                    statement1.setString(2, cardNumber);
+                    statement1.setString(3, pin);
+                    statement1.execute();
+                    JOptionPane.showMessageDialog(null, "Card Number: "+ cardNumber +"\n Pin: "+ pin);
+                    setVisible(false);
+                    System.exit(0);
+                }
+            }
+            else if(e.getSource() == cancel){
+                System.exit(0);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
 }
