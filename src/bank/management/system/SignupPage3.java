@@ -223,8 +223,8 @@ public class SignupPage3 extends JFrame implements ActionListener {
                     statement1.setString(3, pin);
                     statement1.execute();
                     JOptionPane.showMessageDialog(null, "Card Number: "+ cardNumber +"\n Pin: "+ pin);
+                    new Deposit(pin);
                     setVisible(false);
-                    System.exit(0);
                 }
             }
             else if(e.getSource() == cancel){
